@@ -85,7 +85,7 @@ public class Member extends AppCompatActivity {
                 finish();
             }
         });
-        // Di gunakan untuk kembali masuk ke layout ke member jika memilih tidak
+        // Di gunakan untuk kembali masuk ke layout ke member jika memilih tidak dan kembali ke layout member
         builder.setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
