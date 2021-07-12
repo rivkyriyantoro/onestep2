@@ -40,7 +40,7 @@ public class Member extends AppCompatActivity {
         } else {
             actionBar.setTitle("Member");
         }
-// Digunakan untuk menabah keterangan waktu setelah berhasil menyimpan data member baru
+// Digunakan untuk memberikan keterangan waktu setelah berhasil menyimpan data member baru
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
