@@ -16,14 +16,14 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-
+// Deklarasi data
 
     DatabaseHelper databaseHelper;
     ArrayList<String> id, title, description, date;
     RecyclerAdapter recyclerAdapter;
     RecyclerView recyclerView;
     FloatingActionButton btnCreate;
-
+// Digunakan untuk menmpilkan layout activity main
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
             recreate();
         }
     }
-
+// untuk menampilakan tulisan jika data masih kosong
     void storeDataInArray() {
         Cursor cursor = databaseHelper.read();
         if (cursor.getCount() == 0) {

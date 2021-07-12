@@ -13,7 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-
+// Digunakan untuk menampilkan data
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.viewHolder> {
 
     Context context;
@@ -28,14 +28,14 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.viewHo
         this.description = description;
         this.date = date;
     }
-
+// digunakan untuk menampilkan layout list data member
     @Override
     public viewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(context);
         View view = layoutInflater.inflate(R.layout.recycler_row, parent, false);
         return new viewHolder(view);
     }
-
+// digunakan untuk edit atau hapus data
     @Override
     public void onBindViewHolder(viewHolder holder, int position) {
         holder.title.setText(String.valueOf(title.get(position)));
@@ -54,7 +54,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.viewHo
             }
         });
     }
-
+ //digunakan untuk menampilkan layout member
     @Override
     public int getItemCount() {
         return title.size();

@@ -9,6 +9,7 @@ import android.widget.Toast;
 import java.text.DateFormat;
 import java.util.Date;
 
+// untuk menghubungkan database
 public class DatabaseHelper extends SQLiteOpenHelper {
     private Context context;
     private static final int VERSION = 1;
@@ -24,7 +25,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         super(context, DB_NAME, null, VERSION);
         this.context = context;
     }
-
+ // Digunakan untuk membuat table member
     @Override
     public void onCreate(SQLiteDatabase database) {
         String createTable = "CREATE TABLE " + TABLE_NAME + " (" + ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -32,6 +33,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         database.execSQL(createTable);
     }
 
+    //Untuk menghapus data table
     @Override
     public void onUpgrade(SQLiteDatabase database, int i, int i1) {
         database.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
@@ -47,6 +49,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(DESCRIPTION, description);
         values.put(DATE, date);
 
+        // Digunakan Menambahkan data member baru
         long result = database.insert(TABLE_NAME, null, values);
         if (result == -1) {
             Toast.makeText(context, "Gagal Menambahkan Data", Toast.LENGTH_SHORT).show();
@@ -54,6 +57,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             Toast.makeText(context, "Berhasil Menambahkan Data", Toast.LENGTH_SHORT).show();
         }
     }
+
+    // Digunakan untuk mengedit data member
 
     void edit(String id, String title, String description, String date) {
         SQLiteDatabase database = this.getWritableDatabase();
@@ -70,6 +75,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
+    //Digunaka untuk menghapus data yang ada
     void delete(String id) {
         SQLiteDatabase database = this.getWritableDatabase();
         long result = database.delete(TABLE_NAME, "id_note=?", new String[]{id});
@@ -79,6 +85,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             Toast.makeText(context, "Berhasil Menghapus", Toast.LENGTH_SHORT).show();
         }
     }
+    //Digunakan untuk melihat data
 
     Cursor read() {
         String query = "SELECT * FROM " + TABLE_NAME;

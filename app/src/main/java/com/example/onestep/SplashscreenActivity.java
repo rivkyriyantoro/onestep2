@@ -6,6 +6,7 @@ import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+// Di gunakan untuk menampilkan landing page
 public class SplashscreenActivity extends AppCompatActivity {
 
     @Override

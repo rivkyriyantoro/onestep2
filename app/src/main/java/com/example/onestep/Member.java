@@ -14,11 +14,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.text.DateFormat;
 import java.util.Date;
 
+// Digunakan untuk menghubungkan ke activty  cl
+
 public class Member extends AppCompatActivity {
 
     EditText formNama, formDesc;
     Button btnSave, btnDelete;
-
+// Di gunakan untuk masuk ke layout member onestep dan dapat memilih edit atau hapus data
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +40,7 @@ public class Member extends AppCompatActivity {
         } else {
             actionBar.setTitle("Member");
         }
-
+// Digunakan untuk menabah keterangan waktu setelah berhasil menyimpan data member baru
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,6 +58,8 @@ public class Member extends AppCompatActivity {
 
         });
 
+        //Digunakan untuk masuk ke layout member
+
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -67,6 +71,8 @@ public class Member extends AppCompatActivity {
             }
         });
     }
+
+    //Digunakan untuk pilihan jika ingin menghapus data member yang sudah ada
     void modal(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
       
@@ -79,6 +85,7 @@ public class Member extends AppCompatActivity {
                 finish();
             }
         });
+        // Di gunakan untuk kembali masuk ke layout ke member jika memilih tidak
         builder.setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
