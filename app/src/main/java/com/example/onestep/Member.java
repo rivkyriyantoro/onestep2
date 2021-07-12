@@ -20,7 +20,7 @@ public class Member extends AppCompatActivity {
 
     EditText formNama, formDesc;
     Button btnSave, btnDelete;
-// Di gunakan untuk masuk ke layout member onestep dan dapat memilih edit atau hapus data
+// Di gunakan untuk masuk ke layout member onestep dan dapat memilih edit atau hapus data member
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
